@@ -10,14 +10,17 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
-        Programmer Josh = new Programmer();
-        Programmer Conner = new Programmer();
-        Programmer Ryan = new Programmer();
+        Programmer Josh = new Programmer("Josh");
+        Programmer Conner = new Programmer("Conner");
+        Programmer Ryan = new Programmer("Ryan");
 
+        ArrayList<Programmer> programmers = new ArrayList<>(Arrays.asList(Josh, Conner, Ryan));
 
-        Company Intel = new Company();
-        Company Microsoft = new Company();
-        Company Apple = new Company();
+        Company Intel = new Company("Intel");
+        Company Microsoft = new Company("Microsoft");
+        Company Apple = new Company("Apple");
+
+        ArrayList<Company> companies = new ArrayList<>(Arrays.asList(Intel, Microsoft, Apple));
 
         
         Josh.preferences = new ArrayList<>(Arrays.asList(Intel, Microsoft, Apple));
@@ -27,6 +30,12 @@ public class Main {
         Intel.preferences = new ArrayList<>(Arrays.asList(Conner, Ryan, Josh));
         Microsoft.preferences = new ArrayList<>(Arrays.asList(Ryan, Conner, Josh));
         Apple.preferences = new ArrayList<>(Arrays.asList(Conner, Josh, Ryan));
+
+        
+
+        Pair[] pairs = Algorithm.pairingAlgorithm(programmers, companies);
+
+        System.out.println(Arrays.toString(pairs));
 
         
 

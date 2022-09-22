@@ -4,9 +4,11 @@ public class Programmer {
 
     public ArrayList<Company> preferences;
     public Company currentCompany;
+    public boolean paired;
+    public String name;
 
-    // public Programmer(Company[] compArray){
-    //     this.preferences = compArray;
+     public Programmer(String name){
+         this.name = name;
 
-    // }
+     }
 }

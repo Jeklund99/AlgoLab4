@@ -4,11 +4,13 @@ public class Company {
 
     public ArrayList<Programmer> preferences;
     public Programmer currentProgrammer;
+    public boolean paired;
+    public String name;
 
-    // public Company(Programmer[] progArray){
-    //     this.preferences = progArray;
+    public Company(String name){
+        this.name = name;
 
-    // }
+    }
 
     
 
