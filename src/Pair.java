@@ -7,6 +7,27 @@ public class Pair {
         this.company = company;
         this.programmer = programmer;
     }
+
+    public static boolean isSatisfactory(Pair firstPair, Pair secondPair){
+        Programmer pOne = firstPair.programmer;
+        Company cOne = firstPair.company;
+
+        Programmer pTwo = secondPair.programmer;
+        Company cTwo = secondPair.company;
+
+
+        if(pOne.preferences.indexOf(cTwo) < pOne.preferences.indexOf(cOne) && 
+        cTwo.preferences.indexOf(pOne) < cTwo.preferences.indexOf(pTwo)){
+            return false;
+        } 
+        
+        else if (pTwo.preferences.indexOf(cOne) < pOne.preferences.indexOf(cTwo) && 
+        cOne.preferences.indexOf(pTwo) < cTwo.preferences.indexOf(pOne)) {
+            return false;
+        }
+
+        return true;
+    }
     
 
     public String toString() {

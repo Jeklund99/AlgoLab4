@@ -8,7 +8,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
 
         Programmer Josh = new Programmer("Josh");
         Programmer Conner = new Programmer("Conner");
@@ -23,19 +22,35 @@ public class Main {
         ArrayList<Company> companies = new ArrayList<>(Arrays.asList(Intel, Microsoft, Apple));
 
         
-        Josh.preferences = new ArrayList<>(Arrays.asList(Intel, Microsoft, Apple));
-        Conner.preferences = new ArrayList<>(Arrays.asList(Microsoft, Intel, Apple));
+        Josh.preferences = new ArrayList<>(Arrays.asList(Apple, Intel, Microsoft));
+        Conner.preferences = new ArrayList<>(Arrays.asList(Intel, Microsoft, Apple));
         Ryan.preferences = new ArrayList<>(Arrays.asList(Apple, Microsoft, Intel));
 
-        Intel.preferences = new ArrayList<>(Arrays.asList(Conner, Ryan, Josh));
-        Microsoft.preferences = new ArrayList<>(Arrays.asList(Ryan, Conner, Josh));
-        Apple.preferences = new ArrayList<>(Arrays.asList(Conner, Josh, Ryan));
+        Intel.preferences = new ArrayList<>(Arrays.asList(Conner, Josh, Ryan));
+        Microsoft.preferences = new ArrayList<>(Arrays.asList(Ryan, Josh, Conner));
+        Apple.preferences = new ArrayList<>(Arrays.asList(Conner, Ryan, Josh));
 
         
 
         Pair[] pairs = Algorithm.pairingAlgorithm(programmers, companies);
 
-        System.out.println(Arrays.toString(pairs));
+
+        // For manual testing: 
+        // Pair testOne = new Pair(Apple, Ryan);
+        // Pair testTwo = new Pair(Intel, Conner);
+        // Pair testThree = new Pair(Microsoft, Josh);
+
+        // System.out.println(Pair.isSatisfactory(testTwo, testThree));
+
+        for (int i = 0; i < pairs.length; i++) {
+            for (int j = i+1; j < pairs.length; j++) {
+                System.out.println(Pair.isSatisfactory(pairs[i], pairs[j]));
+            }
+        }
+
+        //System.out.println(pairs.length);
+
+       System.out.println(Arrays.toString(pairs));
 
         
 
