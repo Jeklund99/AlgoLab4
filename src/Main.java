@@ -4,6 +4,13 @@ import java.util.Dictionary;
 
 import org.omg.CORBA.INTERNAL;
 
+// Code written by: Conner Hettinger and Josh Eklund
+
+// In the main method, there are three different "pre"-cases that we wrote about.
+// So, in order to run a specific case you have to comment all other cases out and
+// uncomment the case you want. If you want to make your own yuo have to go through
+// the tedious steps of making new programmers and companies with preferences.
+
 public class Main {
 
 
