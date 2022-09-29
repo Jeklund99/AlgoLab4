@@ -21,8 +21,8 @@ public class Pair {
             return false;
         } 
         
-        else if (pTwo.preferences.indexOf(cOne) < pOne.preferences.indexOf(cTwo) && 
-        cOne.preferences.indexOf(pTwo) < cTwo.preferences.indexOf(pOne)) {
+        else if (pTwo.preferences.indexOf(cOne) < pTwo.preferences.indexOf(cTwo) && 
+        cOne.preferences.indexOf(pTwo) < cOne.preferences.indexOf(pOne)) {
             return false;
         }
 
